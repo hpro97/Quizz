@@ -25,7 +25,6 @@
 
 let scoreEl = document.querySelector(".scores");
 let timerEl = document.querySelector(".timer");
-let timerLeftEl = document.querySelector("#time");
 let startScreenEl = document.querySelector("#start-screen");
 let startButtonEl = document.querySelector("#start");
 let questionsEl = document.querySelector("#questions");

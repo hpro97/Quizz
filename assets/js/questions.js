@@ -24,8 +24,13 @@
 // ---------------------------------
 let questionTitleEl = document.querySelector("#question-title");
 let questionChoicesEl = document.querySelector("#choices");
+let timerLeftEl = document.querySelector("#time");
 
 function question1() {
+    startTimer();
+    if (time === 0) {
+        endQuestions();
+    }
     questionTitleEl.textContent = "question 1: ";
     let question1Display = document.createElement("p");
     questionTitleEl.appendChild(question1Display);
@@ -67,6 +72,9 @@ function question1() {
 question1();
 
 function question2() {
+    if (time === 0) {
+        endQuestions();
+    }
     questionTitleEl.textContent = "question 2: ";
     let question2Display = document.createElement("p");
     questionTitleEl.appendChild(question2Display);
@@ -107,6 +115,9 @@ function question2() {
 };
 
 function question3() {
+    if (time === 0) {
+        endQuestions();
+    }
     questionTitleEl.textContent = "question 3: ";
     let question3Display = document.createElement("p");
     questionTitleEl.appendChild(question3Display);
@@ -150,7 +161,11 @@ function question3() {
     })
 };
 // ------------------- Not Working ----------------//
-
+function startTimer() {
+    time = 60;
+    timerLeftEl.textContent = time;
+    //make change timer in client side in realtime with client side storage
+}
 function takeOffTime(time) {
     time = time - 5;
     return time;
@@ -172,8 +187,3 @@ function timerStop() {
     timerLeftEl.textContent = time;
     //make change timer in client side in realtime with client side storage
 }; 
-
-function ifTime0() {
-    //if time reaches o
-    endQuestions();
-}
