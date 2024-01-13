@@ -60,6 +60,8 @@ function endQuestions() {
     questionsEl.classList.add("hide");
     endScreenEl.classList.remove("hide");
     finalScoreEl.textContent = score;
+    //stop timer
+    //add client side storage for initials and score to be stored in local storage
 }
 
 submitInitialsButtonEl.addEventListener("click", function(event) {
@@ -70,5 +72,6 @@ submitInitialsButtonEl.addEventListener("click", function(event) {
     feedbackEl.classList.remove("hide");
     endScreenEl.classList.add("hide");
     startScreenEl.classList.remove("hide");
+    
 });
 

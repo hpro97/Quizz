@@ -27,4 +27,6 @@ let highscoresOlEl = document.querySelector("#highscores");
 let clearHighScoresButtonEl = document.querySelector("#clear");
 
 //click event to clear high scores
-//function to load hishcores
+//function to load highscores
+//create li and append to ul in highscores
+//get client side storage of highscores and apend to li
