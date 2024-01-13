@@ -22,3 +22,17 @@
 // hints: check js linked to html
 
 // ---------------------------------
+
+let scoreEl = document.getElementsByClassName("scores");
+let timerEl = document.getElementsByClassName("timer");
+let timerLeftEl = document.getElementById("time");
+let startScreenEl = document.getElementById("start-screen");
+let startButtonEl = document.getElementById("start");
+let questionsEl = document.getElementById("questions");
+let questionTitleEl = document.getElementById("question-title");
+let questionChoicesEl = document.getElementById("choices");
+let endScreenEl = document.getElementById("end-screen");
+let finalScoreEl = document.getElementById("final-score");
+let enterInitialsEl = document.getElementById("initials");
+let submitInitialsButtonEl = document.getElementById("submit");
+let feedbackEl = document.getElementById("feedback");
