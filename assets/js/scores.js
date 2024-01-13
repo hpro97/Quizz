@@ -22,3 +22,6 @@
 // hints: check js linked to html
 
 // ---------------------------------
+
+let highscoresOlEl = document.getElementById("highscores");
+let clearHighScoresButtonEl = document.getElementById("clear");
