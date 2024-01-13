@@ -23,5 +23,5 @@
 
 // ---------------------------------
 
-let highscoresOlEl = document.getElementById("highscores");
-let clearHighScoresButtonEl = document.getElementById("clear");
+let highscoresOlEl = document.querySelector("#highscores");
+let clearHighScoresButtonEl = document.querySelector("#clear");

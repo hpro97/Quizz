@@ -23,16 +23,36 @@
 
 // ---------------------------------
 
-let scoreEl = document.getElementsByClassName("scores");
-let timerEl = document.getElementsByClassName("timer");
-let timerLeftEl = document.getElementById("time");
-let startScreenEl = document.getElementById("start-screen");
-let startButtonEl = document.getElementById("start");
-let questionsEl = document.getElementById("questions");
-let questionTitleEl = document.getElementById("question-title");
-let questionChoicesEl = document.getElementById("choices");
-let endScreenEl = document.getElementById("end-screen");
-let finalScoreEl = document.getElementById("final-score");
-let enterInitialsEl = document.getElementById("initials");
-let submitInitialsButtonEl = document.getElementById("submit");
-let feedbackEl = document.getElementById("feedback");
+let scoreEl = document.querySelector(".scores");
+let timerEl = document.querySelector(".timer");
+let timerLeftEl = document.querySelector("#time");
+let startScreenEl = document.querySelector("#start-screen");
+let startButtonEl = document.querySelector("#start");
+let questionsEl = document.querySelector("#questions");
+let endScreenEl = document.querySelector("#end-screen");
+let finalScoreEl = document.querySelector("#final-score");
+let enterInitialsEl = document.querySelector("#initials");
+let submitInitialsButtonEl = document.querySelector("#submit");
+let feedbackEl = document.querySelector("#feedback");
+
+let score = 0
+let time = 60
+
+startButtonEl.addEventListener("click", function(event) {
+event.preventDefault();
+startQuiz();
+});
+function startQuiz(event) {
+    startScreenEl.classList.add("hide");
+    questionsEl.classList.remove("hide");
+    timerLeftEl.textContent = time;
+    questionsEl.classList.remove("hide");
+    displayQuestion();
+};
+
+function displayQuestion() {
+    questionsEl.classList.remove("hide");
+};
+
+// ------------------- Not Working ----------------//
+
