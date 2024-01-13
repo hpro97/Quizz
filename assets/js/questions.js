@@ -124,25 +124,29 @@ function question3() {
     questionChoicesDisplay2.addEventListener("click", function() {
         questionChoicesDisplay2.textContent = "correct!";
         addPoints();
-        question3();
+        endQuestions();
+        timerStop();
     })
     questionChoicesDisplay3.addEventListener("click", function() {
         questionChoicesDisplay3.textContent = "wrong!";
         takeOffTime();
         updateTimerTimeDeducted();
-        question3();
+        endQuestions();
+        timerStop();
     })
     questionChoicesDisplay1.addEventListener("click", function() {
         questionChoicesDisplay1.textContent = "wrong!";
         takeOffTime();
         updateTimerTimeDeducted();
-        question3();
+        endQuestions();
+        timerStop();
     })
     questionChoicesDisplay4.addEventListener("click", function() {
         questionChoicesDisplay4.textContent = "wrong!";
         takeOffTime();
         updateTimerTimeDeducted();
-        question3();
+        endQuestions();
+        timerStop();
     })
 };
 // ------------------- Not Working ----------------//
@@ -162,3 +166,14 @@ function addPoints() {
     score = score + 1;
     //make change score in client side in realtime with client side storage
 };
+
+function timerStop() {
+    time = 0;
+    timerLeftEl.textContent = time;
+    //make change timer in client side in realtime with client side storage
+}; 
+
+function ifTime0() {
+    //if time reaches o
+    endQuestions();
+}

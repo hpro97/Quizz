@@ -43,6 +43,8 @@ event.preventDefault();
 startQuiz();
 });
 function startQuiz(event) {
+    //reset timer
+    //reset score
     startScreenEl.classList.add("hide");
     questionsEl.classList.remove("hide");
     timerLeftEl.textContent = time;
@@ -54,5 +56,19 @@ function displayQuestion() {
     questionsEl.classList.remove("hide");
 };
 
-// ------------------- Not Working ----------------//
+function endQuestions() {
+    questionsEl.classList.add("hide");
+    endScreenEl.classList.remove("hide");
+    finalScoreEl.textContent = score;
+}
+
+submitInitialsButtonEl.addEventListener("click", function(event) {
+    event.preventDefault();
+    enterInitialsEl.classList.add("hide");
+    finalScoreEl.textContent = score;
+    finalScoreEl.classList.remove("hide");
+    feedbackEl.classList.remove("hide");
+    endScreenEl.classList.add("hide");
+    startScreenEl.classList.remove("hide");
+});
 
