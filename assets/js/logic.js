@@ -84,31 +84,41 @@ function endTimer(){
 };
 //-----------score progression-----------//
 function addToScore(){
-    
+    //if right answer clicked add 30 to score
 };
 function saveScore(){
+    //updates local storge to current score
+    //adds to highscore board
     
 };
 function clearScore(){
-    
+    //deletes local storage of intials and scores
 };
 function displayScore(){
-    
+    //displays score on screen in text section
 };
 //-----------initials progression-----------//
 function displayInitials(){
-    
+    //displays initials on screen in text section
 };
 function saveInitials(){
-    
+    //updates local storge to current initials
+    //adds to highscore board
 };
 
 function displayHighScoresWithInitials(){
-    
+    //gets high scores from local storage
+    //gets initials from local storage
+    //shows text inout for initials
+    //shows text input for score
 };
 //-----------game reset-----------//
 function resetGame(){
-    
+    //clears current score
+    //sets current question to 0
+    //deletes answers array
+    //gameover = true
+    //resets timer to 60
 };
 
 //step 1, listen for event of game start button
