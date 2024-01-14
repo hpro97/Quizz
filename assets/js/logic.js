@@ -32,3 +32,16 @@ let finalScoreEl = document.querySelector("#final-score");
 let enterInitialsEl = document.querySelector("#initials");
 let submitInitialsButtonEl = document.querySelector("#submit");
 let feedbackEl = document.querySelector("#feedback");
+
+//define initial variables that change through game
+let timeLeft = 60;
+let answers = []; //array for answers to be stored when making score
+let gameOver = true; //boolean for if game is over (starts as over until game started)
+let currentQuestion = questions[i]; //current question which we're on from questions array
+let score = 0 // initial score on starting, will change as game progresses
+
+//convenience variables
+numberOfQuestions = questions.length;
+
+//get items from local storage
+score = localStorage.getItem("score")
