@@ -68,36 +68,34 @@ function displayNextQuestion(){
     let questionChoicesDisplay2 = document.createElement("button");
     let questionChoicesDisplay3 = document.createElement("button");
     let questionChoicesDisplay4 = document.createElement("button");
+    questionChoicesEl.innerHTML = '';
     questionChoicesEl.append(questionChoicesDisplay1, questionChoicesDisplay2, questionChoicesDisplay3, questionChoicesDisplay4);
     questionChoicesDisplay1.textContent = currentQuestion.choices[0];
     questionChoicesDisplay2.textContent = currentQuestion.choices[1];
     questionChoicesDisplay3.textContent = currentQuestion.choices[2];
     questionChoicesDisplay4.textContent = currentQuestion.choices[3];
     correctAnswer = currentQuestion.answer;
+    let correctAnswerChoice;
     if (questionChoicesDisplay1.textContent === correctAnswer) {
-        let correctAnswerChoice = questionChoicesDisplay1
+        correctAnswerChoice = questionChoicesDisplay1;
     } else if (questionChoicesDisplay2.textContent === correctAnswer) {
-        let correctAnswerChoice = questionChoicesDisplay2
+        correctAnswerChoice = questionChoicesDisplay2;
     } else if (questionChoicesDisplay3.textContent === correctAnswer) {
-        let correctAnswerChoice = questionChoicesDisplay3
+        correctAnswerChoice = questionChoicesDisplay3;
     } else {
-        let correctAnswerChoice = questionChoicesDisplay4
+        correctAnswerChoice = questionChoicesDisplay4;
     }
  
     if (currentQuestionIndex >= questions.length) {
         endGame();
-
+    }
     correctAnswerChoice.addEventListener("click", function(){
         addToScore();
         currentQuestionIndex++;
         displayNextQuestion();
     })
-    !correctAnswerChoice.addEventListener("click", function(){
-        timerPenalty();
-        currentQuestionIndex++;
-        displayNextQuestion();
-    })
-}};
+    //add event listener for wrong answer choice
+};
 function endGame(){
     //if time is 0 or no questions left in array game over
     saveScore();
