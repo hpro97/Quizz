@@ -21,3 +21,33 @@
 
 // hints: check js linked to html
 
+//quesitons object arrya
+
+let questions = //varriable storing array
+[
+	{//individual items in array
+        title = "Question 1"
+		choices = [choice1 = "1",choice2 = "2",choice3 = "3",choice4 = "4"] 
+		answer = [choice1]
+    }
+    {
+        title = "Question 2"
+		choices = [choice1 = "1",choice2 = "2",choice3 = "3",choice4 = "4"] 
+		answer = [choice3]
+    }
+    {
+        title = "Question 3"
+		choices = [choice1 = "1",choice2 = "2",choice3 = "3",choice4 = "4"] 
+		answer = [choice4]
+    }
+    {
+        title = "Question 4"
+		choices = [choice1 = "1",choice2 = "2",choice3 = "3",choice4 = "4"] 
+		answer = [choice2]
+    }
+    {
+        title = "Question 5"
+		choices = [choice1 = "1",choice2 = "2",choice3 = "3",choice4 = "4"] 
+		answer = [choice1]
+    }
+]

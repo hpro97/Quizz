@@ -21,3 +21,14 @@
 
 // hints: check js linked to html
 
+//queryselectors for all//
+let scoreEl = document.querySelector(".scores");
+let timerEl = document.querySelector(".timer");
+let startScreenEl = document.querySelector("#start-screen");
+let startButtonEl = document.querySelector("#start");
+let questionsEl = document.querySelector("#questions");
+let endScreenEl = document.querySelector("#end-screen");
+let finalScoreEl = document.querySelector("#final-score");
+let enterInitialsEl = document.querySelector("#initials");
+let submitInitialsButtonEl = document.querySelector("#submit");
+let feedbackEl = document.querySelector("#feedback");
