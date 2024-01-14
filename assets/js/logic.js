@@ -74,7 +74,8 @@ function displayNextQuestion(){
     questionChoicesDisplay2.textContent = currentQuestion.choices[1];
     questionChoicesDisplay3.textContent = currentQuestion.choices[2];
     questionChoicesDisplay4.textContent = currentQuestion.choices[3];
-    correctAnswer = currentQuestion.answer;
+    //---------------------------------------------------------------//
+    let correctAnswer = currentQuestion.answer;
     let correctAnswerChoice;
     if (questionChoicesDisplay1.textContent === correctAnswer) {
         correctAnswerChoice = questionChoicesDisplay1;
@@ -85,7 +86,25 @@ function displayNextQuestion(){
     } else {
         correctAnswerChoice = questionChoicesDisplay4;
     }
- 
+
+    //---------------------------------------------------------------//
+    // let notCorrectAnswer = [];
+    // questionChoicesEl.children.forEach((e) => {
+    //     if (e.textContent !== correctAnswer) {
+    //         notCorrectAnswer.push(e);
+    //     }
+    // } );
+    // if (questionChoicesEl.children.textContent === notCorrectAnswer) {
+    //     wrongAnswerButton = questionChoicesEl.children;
+    // }
+
+    // wrongAnswerButton.eventListener("click", function(){
+    //     timerPenalty();
+    //     currentQuestionIndex++;
+    //     displayNextQuestion();
+    // })
+    //---------------------------------------------------------------//
+
     if (currentQuestionIndex >= questions.length) {
         endGame();
     }
@@ -94,7 +113,14 @@ function displayNextQuestion(){
         currentQuestionIndex++;
         displayNextQuestion();
     })
-    //add event listener for wrong answer choice
+
+    //add event listener for wrong answer choice this doesn't work V
+
+    // !correctAnswerChoice.addEventListener("click", function(){
+    //     timerPenalty();
+    //     currentQuestionIndex++;
+    //     displayNextQuestion();
+    // })
 };
 function endGame(){
     //if time is 0 or no questions left in array game over

@@ -28,26 +28,31 @@ let questions = //varriable storing array
     {//individual items in array
     title: "Question 1",
     choices: ["1", "2", "3", "4"],
-    answer: "1"
+    answer: "1",
+    wrongAnswers: ["2", "3", "4"],
     },
     {
     title: "Question 2",
     choices: ["a", "b", "c", "d"],
-    answer: "c"
+    answer: "c",
+    wrongAnswers: ["a", "b", "d"],
     },
     {
     title: "Question 3",
     choices: ["x", "y", "z", "w"],
-    answer: "w"
+    answer: "w",
+    wrongAnswers: ["x", "y", "z"],
     },
     {
     title: "Question 4",
     choices: ["7", "8", "9", "10"],
-    answer: "8"
+    answer: "8",
+    wrongAnswers: ["7", "9", "10"],
     },
     {
     title: "Question 5",
     choices: ["i", "j", "k", "l"],
-    answer: "i"
+    answer: "i",
+    wrongAnswers: ["j", "k", "l"],
     }
 ];
