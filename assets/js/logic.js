@@ -38,10 +38,82 @@ let timeLeft = 60;
 let answers = []; //array for answers to be stored when making score
 let gameOver = true; //boolean for if game is over (starts as over until game started)
 let currentQuestion = questions[i]; //current question which we're on from questions array
-let score = 0 // initial score on starting, will change as game progresses
+let Score = 0 // initial score on starting, will change as game progresses
 
 //convenience variables
 numberOfQuestions = questions.length;
 
-//get items from local storage
-score = localStorage.getItem("score")
+//get items from local storage //remeber to set also// remember to stringify// remeber to parse
+let score = localStorage.getItem("score")
+let initials = localStorage.getItem("initials")
+
+//functions i think i'll need
+//-----------game progression-----------//
+function startGame() {
+    startScreenEl.classList.add("hide");
+    questionsEl.classList.remove("hide");
+    questionsEl.classList.remove("hide");
+    timerLeftEl.textContent = timeLeft;
+    startTimer();
+    displayNextQuestion();
+};
+function displayNextQuestion(){
+    //display question starting 0 adding 1 each time to display next question
+};
+function endGame(){
+    //if time is 0 or no questions left in array game over
+    saveScore();
+    endTimer();
+    displayScore();
+    //takes you to highscores (hides and removes html elements)
+};
+//-----------timer progression-----------//
+function startTimer(){
+    //starts at 60
+    //takes away a second each second interval
+    //updates text every second
+    //stops at 0
+};
+function timerPenalty(){
+    //takes away 5 seconds if wrong answer clicked
+    
+};
+function endTimer(){
+    //make stime left 0
+    //sets text
+};
+//-----------score progression-----------//
+function addToScore(){
+    
+};
+function saveScore(){
+    
+};
+function clearScore(){
+    
+};
+function displayScore(){
+    
+};
+//-----------initials progression-----------//
+function displayInitials(){
+    
+};
+function saveInitials(){
+    
+};
+
+function displayHighScoresWithInitials(){
+    
+};
+//-----------game reset-----------//
+function resetGame(){
+    
+};
+
+//step 1, listen for event of game start button
+
+startButtonEl.addEventListener("click", function(event) {
+    event.preventDefault();
+    startGame();
+    });

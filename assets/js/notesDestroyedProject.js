@@ -46,7 +46,7 @@ function startQuiz(event) {
     score = 0;
     startScreenEl.classList.add("hide");
     questionsEl.classList.remove("hide");
-    timerLeftEl.textContent = time;
+    timerLeftEl.textContent = timeLeft;
     questionsEl.classList.remove("hide");
     displayQuestion();
     startTimer();
@@ -55,7 +55,7 @@ function startQuiz(event) {
 function displayQuestion() {
     questionsEl.classList.remove("hide");
 };
-
+//----------------------//
 function endQuestions() {
     questionsEl.classList.add("hide");
     endScreenEl.classList.remove("hide");
