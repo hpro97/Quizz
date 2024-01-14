@@ -27,6 +27,9 @@ let timerEl = document.querySelector(".timer");
 let startScreenEl = document.querySelector("#start-screen");
 let startButtonEl = document.querySelector("#start");
 let questionsEl = document.querySelector("#questions");
+let questionTitleEl = document.querySelector("#question-title");
+let questionChoicesEl = document.querySelector("#choices");
+let timerLeftEl = document.querySelector("#time");
 let endScreenEl = document.querySelector("#end-screen");
 let finalScoreEl = document.querySelector("#final-score");
 let enterInitialsEl = document.querySelector("#initials");
@@ -37,8 +40,8 @@ let feedbackEl = document.querySelector("#feedback");
 let timeLeft = 60;
 let answers = []; //array for answers to be stored when making score
 let gameOver = true; //boolean for if game is over (starts as over until game started)
-let currentQuestion = questions[i]; //current question which we're on from questions array
-let Score = 0 // initial score on starting, will change as game progresses
+//let currentQuestion = questions[i];// //current question which we're on from questions array
+let Score = 0; // initial score on starting, will change as game progresses
 
 //convenience variables
 numberOfQuestions = questions.length;
@@ -52,14 +55,49 @@ let initials = localStorage.getItem("initials")
 function startGame() {
     startScreenEl.classList.add("hide");
     questionsEl.classList.remove("hide");
-    questionsEl.classList.remove("hide");
     timerLeftEl.textContent = timeLeft;
     startTimer();
     displayNextQuestion();
 };
+let currentQuestionIndex = 0;
 function displayNextQuestion(){
     //display question starting 0 adding 1 each time to display next question
-};
+    let currentQuestion = questions[currentQuestionIndex];
+    questionTitleEl.textContent = currentQuestion.title;
+    let questionChoicesDisplay1 = document.createElement("button");
+    let questionChoicesDisplay2 = document.createElement("button");
+    let questionChoicesDisplay3 = document.createElement("button");
+    let questionChoicesDisplay4 = document.createElement("button");
+    questionChoicesEl.append(questionChoicesDisplay1, questionChoicesDisplay2, questionChoicesDisplay3, questionChoicesDisplay4);
+    questionChoicesDisplay1.textContent = currentQuestion.choices[0];
+    questionChoicesDisplay2.textContent = currentQuestion.choices[1];
+    questionChoicesDisplay3.textContent = currentQuestion.choices[2];
+    questionChoicesDisplay4.textContent = currentQuestion.choices[3];
+    correctAnswer = currentQuestion.answer;
+    if (questionChoicesDisplay1.textContent === correctAnswer) {
+        let correctAnswerChoice = questionChoicesDisplay1
+    } else if (questionChoicesDisplay2.textContent === correctAnswer) {
+        let correctAnswerChoice = questionChoicesDisplay2
+    } else if (questionChoicesDisplay3.textContent === correctAnswer) {
+        let correctAnswerChoice = questionChoicesDisplay3
+    } else {
+        let correctAnswerChoice = questionChoicesDisplay4
+    }
+ 
+    if (currentQuestionIndex >= questions.length) {
+        endGame();
+
+    correctAnswerChoice.addEventListener("click", function(){
+        addToScore();
+        currentQuestionIndex++;
+        displayNextQuestion();
+    })
+    !correctAnswerChoice.addEventListener("click", function(){
+        timerPenalty();
+        currentQuestionIndex++;
+        displayNextQuestion();
+    })
+}};
 function endGame(){
     //if time is 0 or no questions left in array game over
     saveScore();
@@ -124,6 +162,5 @@ function resetGame(){
 //step 1, listen for event of game start button
 
 startButtonEl.addEventListener("click", function(event) {
-    event.preventDefault();
     startGame();
     });
