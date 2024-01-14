@@ -42,8 +42,8 @@ event.preventDefault();
 startQuiz();
 });
 function startQuiz(event) {
-    //reset timer
-    //reset score
+    time = 60;
+    score = 0;
     startScreenEl.classList.add("hide");
     questionsEl.classList.remove("hide");
     timerLeftEl.textContent = time;
@@ -59,8 +59,10 @@ function endQuestions() {
     questionsEl.classList.add("hide");
     endScreenEl.classList.remove("hide");
     finalScoreEl.textContent = score;
-    //stop timer
+    time = 0;
+    timerLeftEl.textContent = time;
     //add client side storage for initials and score to be stored in local storage
+    localStorage.setItem("score", score);
 }
 
 submitInitialsButtonEl.addEventListener("click", function(event) {
@@ -71,6 +73,7 @@ submitInitialsButtonEl.addEventListener("click", function(event) {
     feedbackEl.classList.remove("hide");
     endScreenEl.classList.add("hide");
     startScreenEl.classList.remove("hide");
+    localStorage.setItem("initials", initials);
     
 });
 

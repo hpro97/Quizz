@@ -30,3 +30,13 @@ let clearHighScoresButtonEl = document.querySelector("#clear");
 //function to load highscores
 //create li and append to ul in highscores
 //get client side storage of highscores and apend to li
+
+clearHighScoresButtonEl.addEventListener("click", function(event) {
+    event.preventDefault();
+    localStorage.clear();
+    highscoresLiEl.innerHTML = "";
+})
+
+let highscoresLiEl = document.createElement("li");
+highscoresOlEl.appendChild(highscoresLiEl)
+highscoresLiEl.textContent = localStorage.getItem("highscores")

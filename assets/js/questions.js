@@ -53,22 +53,20 @@ function question1() {
     questionChoicesDisplay2.addEventListener("click", function() {
         questionChoicesDisplay2.textContent = "wrong!";
         takeOffTime();
-        updateTimerTimeDeducted();
         question2();
     })
     questionChoicesDisplay3.addEventListener("click", function() {
         questionChoicesDisplay3.textContent = "wrong!";
         takeOffTime();
-        updateTimerTimeDeducted();
         question2();
     })
     questionChoicesDisplay4.addEventListener("click", function() {
         questionChoicesDisplay4.textContent = "wrong!";
         takeOffTime();
-        updateTimerTimeDeducted();
         question2();
     })
 };
+updateTimerTimeDeducted();
 question1();
 
 function question2() {
@@ -97,22 +95,20 @@ function question2() {
     questionChoicesDisplay2.addEventListener("click", function() {
         questionChoicesDisplay2.textContent = "wrong!";
         takeOffTime();
-        updateTimerTimeDeducted();
         question3();
     })
     questionChoicesDisplay1.addEventListener("click", function() {
         questionChoicesDisplay1.textContent = "wrong!";
         takeOffTime();
-        updateTimerTimeDeducted();
         question3();
     })
     questionChoicesDisplay4.addEventListener("click", function() {
         questionChoicesDisplay4.textContent = "wrong!";
         takeOffTime();
-        updateTimerTimeDeducted();
         question3();
-    })
+    });
 };
+updateTimerTimeDeducted()
 
 function question3() {
     if (time === 0) {
@@ -141,25 +137,23 @@ function question3() {
     questionChoicesDisplay3.addEventListener("click", function() {
         questionChoicesDisplay3.textContent = "wrong!";
         takeOffTime();
-        updateTimerTimeDeducted();
         endQuestions();
         timerStop();
     })
     questionChoicesDisplay1.addEventListener("click", function() {
         questionChoicesDisplay1.textContent = "wrong!";
         takeOffTime();
-        updateTimerTimeDeducted();
         endQuestions();
         timerStop();
     })
     questionChoicesDisplay4.addEventListener("click", function() {
         questionChoicesDisplay4.textContent = "wrong!";
         takeOffTime();
-        updateTimerTimeDeducted();
         endQuestions();
         timerStop();
     })
 };
+updateTimerTimeDeducted();
 // ------------------- Not Working ----------------//
 function startTimer() {
     time = 60;
@@ -177,9 +171,10 @@ function updateTimerTimeDeducted() {
     //make change timer in client side in realtime with client side storage
 };
 
-function addPoints() {
+function addPoints(score) {
     score = score + 1;
-    //make change score in client side in realtime with client side storage
+    localStorage.setItem("score", score);
+    return score;
 };
 
 function timerStop() {
