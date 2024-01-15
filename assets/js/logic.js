@@ -287,7 +287,7 @@ function saveScore(){
 function displayScore(){
     questionsEl.classList.add("hide");
     endScreenEl.classList.remove("hide");
-    
+    finalScoreEl.textContent = scoreTotal;
     //displays score on screen in text section
 };
 //-----------initials progression-----------//
@@ -311,5 +311,11 @@ function resetGame(){
 //step 1, listen for event of game start button
 
 startButtonEl.addEventListener("click", function(event) {
+    resetGame();
     startGame();
+    });
+
+submitInitialsButtonEl.addEventListener("click", function(event) {
+    saveInitials();
+
     });
