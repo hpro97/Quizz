@@ -271,6 +271,10 @@ function saveScore(){
     score = localStorage.setItem("score")
     
 };
+//-------------------------------------------------//
+//------------------ STILL TO DO ------------------//
+//-------------------------------------------------//
+
 function displayScore(){
     //displays score on screen in text section
 };

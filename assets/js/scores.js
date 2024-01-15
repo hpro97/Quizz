@@ -21,6 +21,10 @@
 
 // hints: check js linked to html
 
+//-------------------------------------------------//
+//------------------ STILL TO DO ------------------//
+//-------------------------------------------------//
+
 function clearScore(){
     //deletes local storage of intials and scores
 };
