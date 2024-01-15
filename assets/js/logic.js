@@ -46,6 +46,8 @@ let wrongAnswerChoice1;
 let wrongAnswerChoice2;
 let wrongAnswerChoice3;
 let wrongAnswerChoice4;
+let correctAnswerChoice;
+let timerInterval;
 
 //convenience variables
 numberOfQuestions = questions.length;
@@ -149,6 +151,8 @@ function displayNextQuestion(){
     //     displayNextQuestion();
     // })
 
+    //---------------------------------------------------------------//
+
 let wrongAnswerChoice1 = questionChoicesDisplay1;
 let wrongAnswerChoice2 = questionChoicesDisplay2;
 let wrongAnswerChoice3 = questionChoicesDisplay3;
@@ -195,7 +199,6 @@ if (wrongAnswerChoice4 !== null) {
         displayNextQuestion();
     });
 }
-    //---------------------------------------------------------------//
 
 
     correctAnswerChoice.addEventListener("click", function(){
@@ -209,6 +212,9 @@ if (wrongAnswerChoice4 !== null) {
     }
 
 };
+
+//---------------------------------------------------------------//
+
 function endGame(){
     //if time is 0 or no questions left in array game over
     saveScore();
@@ -218,25 +224,50 @@ function endGame(){
 };
 //-----------timer progression-----------//
 function startTimer(){
+    timerLeftEl.textContent = timeLeft;
+    timerInterval = setInterval(function() {
+            timeLeft--;
+            timerLeftEl.textContent = timeLeft;
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            endTimer();
+        }
+    }, 1000);
+};
     //starts at 60
     //takes away a second each second interval
     //updates text every second
     //stops at 0
-};
 function timerPenalty(){
     //takes away 5 seconds if wrong answer clicked
-    
-};
+    timeLeft -= 5;
+    if (timeLeft < 0) {
+        timeLeft = 0;
+    }
+    timerLeftEl.textContent = timeLeft;
+    if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        endTimer();
+    }
+        }
 function endTimer(){
     //make stime left 0
     //sets text
+    timeLeft = 0;
+    timerLeftEl.textContent = timeLeft;
+    if (timeLeft === 0) {
+        clearInterval(timerInterval);
+        endTimer();
+    }
 };
 //-----------score progression-----------//
 function addToScore(){
     //if right answer clicked add 30 to score
+    score = score + 30;
 };
 function saveScore(){
     //updates local storge to current score
+    
     //adds to highscore board
     
 };
