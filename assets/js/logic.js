@@ -41,7 +41,7 @@ let timeLeft = 60;
 let answers = []; //array for answers to be stored when making score
 let gameOver = true; //boolean for if game is over (starts as over until game started)
 //let currentQuestion = questions[i];// //current question which we're on from questions array
-let Score = 0; // initial score on starting, will change as game progresses
+
 let wrongAnswerChoice1;
 let wrongAnswerChoice2;
 let wrongAnswerChoice3;
@@ -261,37 +261,28 @@ function endTimer(){
     }
 };
 //-----------score progression-----------//
-function addToScore(){
+function addToScore(score){
     //if right answer clicked add 30 to score
     score = score + 30;
+    score = localStorage.setItem("score", score)
 };
 function saveScore(){
     //updates local storge to current score
+    score = localStorage.setItem("score")
     
-    //adds to highscore board
-    
-};
-function clearScore(){
-    //deletes local storage of intials and scores
 };
 function displayScore(){
     //displays score on screen in text section
 };
 //-----------initials progression-----------//
-function displayInitials(){
-    //displays initials on screen in text section
-};
+
 function saveInitials(){
     //updates local storge to current initials
     //adds to highscore board
 };
 
-function displayHighScoresWithInitials(){
-    //gets high scores from local storage
-    //gets initials from local storage
-    //shows text inout for initials
-    //shows text input for score
-};
+//add event listener for submit button to save initials and save score
+
 //-----------game reset-----------//
 function resetGame(){
     //clears current score
