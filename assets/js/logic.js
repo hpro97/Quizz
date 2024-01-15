@@ -41,7 +41,7 @@ let timeLeft = 60;
 let answers = []; //array for answers to be stored when making score
 let gameOver = true; //boolean for if game is over (starts as over until game started)
 //let currentQuestion = questions[i];// //current question which we're on from questions array
-
+let currentQuestionIndex = 0;
 let wrongAnswerChoice1;
 let wrongAnswerChoice2;
 let wrongAnswerChoice3;
@@ -65,9 +65,13 @@ function startGame() {
     startTimer();
     displayNextQuestion();
 };
-let currentQuestionIndex = 0;
+
 function displayNextQuestion(){
     //display question starting 0 adding 1 each time to display next question
+    console.log(currentQuestionIndex);
+    if (currentQuestionIndex >= questions.length-1) {
+        endGame();
+    }
     let currentQuestion = questions[currentQuestionIndex];
     questionTitleEl.textContent = currentQuestion.title;
     let questionChoicesDisplay1 = document.createElement("button");
@@ -205,21 +209,24 @@ if (wrongAnswerChoice4 !== null) {
         addToScore();
         currentQuestionIndex++;
         displayNextQuestion();
-    })
-
-    if (currentQuestionIndex >= questions.length) {
-        endGame();
-    }
+    });
 
 };
+//---------------------------------------------------------------//
+//-------------------------NOT WORKING---------------------------//
+//---------------------------------------------------------------//
+
+
 
 //---------------------------------------------------------------//
 
 function endGame(){
     //if time is 0 or no questions left in array game over
+    
     saveScore();
-    endTimer();
-    displayScore();
+    endTimer(); //working
+    displayScore(); //calling
+    
     //takes you to highscores (hides and removes html elements)
 };
 //-----------timer progression-----------//
@@ -257,18 +264,20 @@ function endTimer(){
     timerLeftEl.textContent = timeLeft;
     if (timeLeft === 0) {
         clearInterval(timerInterval);
-        endTimer();
+        return;
     }
 };
 //-----------score progression-----------//
-function addToScore(score){
+function addToScore(){
     //if right answer clicked add 30 to score
-    score = score + 30;
-    score = localStorage.setItem("score", score)
+    let score = parseInt(localStorage.getItem("score")) || 0;
+    score += 30;
+    localStorage.setItem("score", score);
 };
 function saveScore(){
     //updates local storge to current score
-    score = localStorage.setItem("score")
+    scoreTotal = parseInt(localStorage.getItem("score"));
+    console.log(scoreTotal);
     
 };
 //-------------------------------------------------//
@@ -276,6 +285,9 @@ function saveScore(){
 //-------------------------------------------------//
 
 function displayScore(){
+    questionsEl.classList.add("hide");
+    endScreenEl.classList.remove("hide");
+    
     //displays score on screen in text section
 };
 //-----------initials progression-----------//
