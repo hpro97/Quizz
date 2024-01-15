@@ -212,11 +212,6 @@ if (wrongAnswerChoice4 !== null) {
     });
 
 };
-//---------------------------------------------------------------//
-//-------------------------NOT WORKING---------------------------//
-//---------------------------------------------------------------//
-
-
 
 //---------------------------------------------------------------//
 
@@ -280,9 +275,6 @@ function saveScore(){
     console.log(scoreTotal);
     
 };
-//-------------------------------------------------//
-//------------------ STILL TO DO ------------------//
-//-------------------------------------------------//
 
 function displayScore(){
     questionsEl.classList.add("hide");
@@ -290,23 +282,33 @@ function displayScore(){
     finalScoreEl.textContent = scoreTotal;
     //displays score on screen in text section
 };
+
+//-------------------------------------------------//
+//------------------ STILL TO DO ------------------//
+//-------------------------------------------------//
+
 //-----------initials progression-----------//
 
 function saveInitials(){
-    //updates local storge to current initials
-    //adds to highscore board
+    // saves initials to local storage
+    // saves initials with score to array as object (AAA, 90)
 };
 
 //add event listener for submit button to save initials and save score
 
 //-----------game reset-----------//
 function resetGame(){
-    //clears current score
-    //sets current question to 0
-    //deletes answers array
-    //gameover = true
-    //resets timer to 60
+	// clear score var
+	// clear initials var
+	// sets current question index to 0
+	// delete answers array
+	// gameover = true
+	// reset timer
 };
+
+//---------------------------------------------------------------//
+//---------------------------------------------------------------//
+//---------------------------------------------------------------//
 
 //step 1, listen for event of game start button
 

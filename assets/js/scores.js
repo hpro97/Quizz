@@ -25,25 +25,28 @@
 //------------------ STILL TO DO ------------------//
 //-------------------------------------------------//
 
-function clearScore(){
-    //deletes local storage of intials and scores
-};
-function displayScoreOnHighscore(){
-    //displays score on screen in text section
-};
-function displayInitialsOnHighscore(){
-    //displays initials on screen in text section
-};
+clearHighScoresButtonEl = document.querySelector("#clear");
 
-function displayHighScoresWithInitials(){
-    //gets high scores from local storage
-    //gets initials from local storage
-    //shows text inout for initials
-    //shows text input for score
+function displayScoreAndInitialsOnHighscore(){
+    //creates text for initials
+    //creates text for score
+    //appends text for initials
+    //appends text for score
+    //displays score on screen in text section from object array
+    //displays initials on screen in text section from object array
 };
 
 function clearHighScores(){
-    //deletes local storage of intials and scores
+    //delete local storage of obj array with initials and score (now wont load on highscroes)
 };
 
+//---------------------------------------------------------------//
+//---------------------------------------------------------------//
+//---------------------------------------------------------------//
+
+
+displayScoreAndInitialsOnHighscore();
+
 //event listener for clear high scores button and does function of clear high scores
+
+clearHighScoresButtonEl.addEventListener("click", clearHighScores);
