@@ -69,7 +69,7 @@ function startGame() {
 function displayNextQuestion(){
     //display question starting 0 adding 1 each time to display next question
     console.log(currentQuestionIndex);
-    if (currentQuestionIndex >= questions.length-1) {
+    if (currentQuestionIndex >= questions.length) {
         endGame();
     }
     let currentQuestion = questions[currentQuestionIndex];

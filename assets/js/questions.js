@@ -26,33 +26,33 @@
 let questions = //varriable storing array
 [
     {//individual items in array
-    title: "Question 1",
-    choices: ["1", "2", "3", "4"],
-    answer: "1",
-    wrongAnswers: ["2", "3", "4"],
+    title: "What year was the Atari 2600 released?",
+    choices: ["1977", "1964", "1981", "2001"],
+    answer: "1977",
+    wrongAnswers: ["1964", "1981", "2001"],
     },
     {
-    title: "Question 2",
-    choices: ["a", "b", "c", "d"],
-    answer: "c",
-    wrongAnswers: ["a", "b", "d"],
+    title: "What was the first console made?",
+    choices: ["atari", "gameboy", "Odyssey", "ps2"],
+    answer: "Odyssey",
+    wrongAnswers: ["atari", "gameboy", "ps2"],
     },
     {
-    title: "Question 3",
-    choices: ["x", "y", "z", "w"],
-    answer: "w",
-    wrongAnswers: ["x", "y", "z"],
+    title: "Which game franchise has made the most money in history?",
+    choices: ["Super Mario", "GTA", "RDR2", "pokemon"],
+    answer: "pokemon",
+    wrongAnswers: ["Super Mario", "GTA", "RDR2"],
     },
     {
-    title: "Question 4",
-    choices: ["7", "8", "9", "10"],
-    answer: "8",
-    wrongAnswers: ["7", "9", "10"],
+    title: "Which was the first pokemon game?",
+    choices: ["crystal", "red and green", "blue", "emerald"],
+    answer: "red and green",
+    wrongAnswers: ["crystal", "blue", "emerald"],
     },
     {
-    title: "Question 5",
-    choices: ["i", "j", "k", "l"],
-    answer: "i",
-    wrongAnswers: ["j", "k", "l"],
+    title: "Which one of these was a starter pokemon for Pokemon Red and Green?",
+    choices: ["bulbasaur", "pikachu", "eevee", "charizard"],
+    answer: "bulbasaur",
+    wrongAnswers: ["pikachu", "eevee", "charizard"],
     }
 ];
