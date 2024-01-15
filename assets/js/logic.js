@@ -42,6 +42,10 @@ let answers = []; //array for answers to be stored when making score
 let gameOver = true; //boolean for if game is over (starts as over until game started)
 //let currentQuestion = questions[i];// //current question which we're on from questions array
 let Score = 0; // initial score on starting, will change as game progresses
+let wrongAnswerChoice1;
+let wrongAnswerChoice2;
+let wrongAnswerChoice3;
+let wrongAnswerChoice4;
 
 //convenience variables
 numberOfQuestions = questions.length;
@@ -76,7 +80,7 @@ function displayNextQuestion(){
     questionChoicesDisplay4.textContent = currentQuestion.choices[3];
     //---------------------------------------------------------------//
     let correctAnswer = currentQuestion.answer;
-    let correctAnswerChoice;
+    
     if (questionChoicesDisplay1.textContent === correctAnswer) {
         correctAnswerChoice = questionChoicesDisplay1;
     } else if (questionChoicesDisplay2.textContent === correctAnswer) {
@@ -103,24 +107,107 @@ function displayNextQuestion(){
     //     currentQuestionIndex++;
     //     displayNextQuestion();
     // })
-    //---------------------------------------------------------------//
 
-    if (currentQuestionIndex >= questions.length) {
-        endGame();
-    }
-    correctAnswerChoice.addEventListener("click", function(){
-        addToScore();
-        currentQuestionIndex++;
-        displayNextQuestion();
-    })
 
-    //add event listener for wrong answer choice this doesn't work V
+
+    // if (questionChoicesDisplay1.textContent !== currentQuestion.answer) {
+    //     wrongAnswerChoice1 = questionChoicesDisplay1;
+    // } else if (questionChoicesDisplay2.textContent !== currentQuestion.answer) {
+    //     wrongAnswerChoice2 = questionChoicesDisplay2;
+    // } else if (questionChoicesDisplay3.textContent !== currentQuestion.answer) {
+    //     wrongAnswerChoice3 = questionChoicesDisplay3;
+    // } else {
+    //     wrongAnswerChoice4 = questionChoicesDisplay4;
+    // }
+
+        //add event listener for wrong answer choice this doesn't work V
 
     // !correctAnswerChoice.addEventListener("click", function(){
     //     timerPenalty();
     //     currentQuestionIndex++;
     //     displayNextQuestion();
     // })
+
+    // wrongAnswerChoice1.addEventListener("click", function(){
+    //     timerPenalty();
+    //     currentQuestionIndex++;
+    //     displayNextQuestion();
+    // })
+    // wrongAnswerChoice2.addEventListener("click", function(){
+    //     timerPenalty();
+    //     currentQuestionIndex++;
+    //     displayNextQuestion();
+    // })
+    // wrongAnswerChoice3.addEventListener("click", function(){
+    //     timerPenalty();
+    //     currentQuestionIndex++;
+    //     displayNextQuestion();
+    // })
+    // wrongAnswerChoice4.addEventListener("click", function(){
+    //     timerPenalty();
+    //     currentQuestionIndex++;
+    //     displayNextQuestion();
+    // })
+
+let wrongAnswerChoice1 = questionChoicesDisplay1;
+let wrongAnswerChoice2 = questionChoicesDisplay2;
+let wrongAnswerChoice3 = questionChoicesDisplay3;
+let wrongAnswerChoice4 = questionChoicesDisplay4;
+
+if (questionChoicesDisplay1.textContent === currentQuestion.answer) {
+    wrongAnswerChoice1 = null;
+} else if (questionChoicesDisplay2.textContent === currentQuestion.answer) {
+    wrongAnswerChoice2 = null;
+} else if (questionChoicesDisplay3.textContent === currentQuestion.answer) {
+    wrongAnswerChoice3 = null;
+} else {
+    wrongAnswerChoice4 = null;
+}
+
+if (wrongAnswerChoice1 !== null) {
+    wrongAnswerChoice1.addEventListener("click", function(){
+        timerPenalty();
+        currentQuestionIndex++;
+        displayNextQuestion();
+    });
+}
+
+if (wrongAnswerChoice2 !== null) {
+    wrongAnswerChoice2.addEventListener("click", function(){
+        timerPenalty();
+        currentQuestionIndex++;
+        displayNextQuestion();
+    });
+}
+
+if (wrongAnswerChoice3 !== null) {
+    wrongAnswerChoice3.addEventListener("click", function(){
+        timerPenalty();
+        currentQuestionIndex++;
+        displayNextQuestion();
+    });
+}
+
+if (wrongAnswerChoice4 !== null) {
+    wrongAnswerChoice4.addEventListener("click", function(){
+        timerPenalty();
+        currentQuestionIndex++;
+        displayNextQuestion();
+    });
+}
+    //---------------------------------------------------------------//
+
+
+    correctAnswerChoice.addEventListener("click", function(){
+        addToScore();
+        currentQuestionIndex++;
+        displayNextQuestion();
+    })
+
+    if (currentQuestionIndex >= questions.length) {
+        endGame();
+    }
+
 };
 function endGame(){
     //if time is 0 or no questions left in array game over
