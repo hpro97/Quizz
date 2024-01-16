@@ -39,7 +39,6 @@ let feedbackEl = document.querySelector("#feedback");
 //define initial variables that change through game
 let timeLeft = 60;
 let answers = []; //array for answers to be stored when making score
-let gameOver = true; //boolean for if game is over (starts as over until game started)
 //let currentQuestion = questions[i];// //current question which we're on from questions array
 let currentQuestionIndex = 0;
 let wrongAnswerChoice1;
@@ -265,7 +264,7 @@ function endTimer(){
 //-----------score progression-----------//
 function addToScore(){
     //if right answer clicked add 30 to score
-    let score = parseInt(localStorage.getItem("score")) || 0;
+    
     score += 30;
     localStorage.setItem("score", score);
 };
@@ -288,29 +287,50 @@ function displayScore(){
 //-------------------------------------------------//
 
 //-----------initials progression-----------//
+let highscores = [];
 
-function saveInitials(){
-    // saves initials to local storage
-    // saves initials with score to array as object (AAA, 90)
+function saveInitials() {
+//get existing array from highscores local storage
+highscores = JSON.parse(localStorage.getItem('highscores')) || [];
+//save the initials to local storage
+let initials = enterInitialsEl.value;
+localStorage.setItem('initials', initials);
+//create object with the initials and score
+let userScoreAndInitials = {
+    initials: initials,
+    score: scoreTotal
+};
+// checks highscore is array otherwise creates
+if (!Array.isArray(highscores)) {
+    highscores = [];
+}
+//push new object to highscores each time executed
+highscores.push(userScoreAndInitials);
+//store new array in local storage
+localStorage.setItem('highscores', JSON.stringify(highscores));
+let updatedHighscores = JSON.parse(localStorage.getItem('highscores'));
+console.log(updatedHighscores);
 };
 
 //add event listener for submit button to save initials and save score
 
 //-----------game reset-----------//
 function resetGame(){
-	// clear score var
-	// clear initials var
+    // resets score
+    score = 0;
+    // resets initials
+    initials = "";
 	// sets current question index to 0
+    currentQuestionIndex = 0;
 	// delete answers array
-	// gameover = true
+    answers = [];
 	// reset timer
+    timeLeft = 60;
 };
 
 //---------------------------------------------------------------//
 //---------------------------------------------------------------//
 //---------------------------------------------------------------//
-
-//step 1, listen for event of game start button
 
 startButtonEl.addEventListener("click", function(event) {
     resetGame();
