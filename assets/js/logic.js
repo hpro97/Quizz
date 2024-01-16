@@ -227,6 +227,7 @@ console.log(updatedHighscores); //logs updated highscores to check working
 //-----------game reset-----------//
 function resetGame(){ //resets game
 score = 0; //sets score to 0
+localStorage.setItem("score", 0);
 initials = ""; //sets initials to empty
 currentQuestionIndex = 0; //sets current question index to 0
 answers = []; //sets answers to empty
