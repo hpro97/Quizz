@@ -226,16 +226,16 @@ console.log(updatedHighscores); //logs updated highscores to check working
 //add event listener for submit button to save initials and save score
 //-----------game reset-----------//
 function resetGame(){ //resets game
-    score = 0; //sets score to 0
-    initials = ""; //sets initials to empty
-    currentQuestionIndex = 0; //sets current question index to 0
-    answers = []; //sets answers to empty
-    timeLeft = 60; //sets time left to 60
+score = 0; //sets score to 0
+initials = ""; //sets initials to empty
+currentQuestionIndex = 0; //sets current question index to 0
+answers = []; //sets answers to empty
+timeLeft = 60; //sets time left to 60
 };
 startButtonEl.addEventListener("click", function(event) {
-    resetGame();
-    startGame();
+resetGame();
+startGame();
 });
 submitInitialsButtonEl.addEventListener("click", function(event) {
-    saveInitials();
+saveInitials();
 });
